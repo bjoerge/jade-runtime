@@ -23,10 +23,10 @@ function merge(obj, otherObj) {
 
 var _globals = {};
 
-exports = function (globals) {
+module.exports = function (globals) {
   extend(_globals, globals);
 };
 
-exports.merge = function (locals) {
+module.exports.merge = function (locals) {
   return merge(_globals, locals);
 };
