@@ -151,11 +151,12 @@ exports.escape = function escape(html){
 exports.rethrow = function rethrow(err, filename, lineno){
   if (!filename) throw err;
 
+  var str;
   try {
-    var str = require('fs').readFileSync(filename, 'utf8');
+    str = require('fs').readFileSync(filename, 'utf8');
   }
   catch (e) {
-    throw err;
+    str = "";
   }
 
   var context = 3
